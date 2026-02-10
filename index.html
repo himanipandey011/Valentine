@@ -54,7 +54,7 @@
     }
 
     .emoji-row {
-      font-size: 42px;
+      font-size: 30px;
     }
 
     h1 {
@@ -129,25 +129,41 @@
       from { transform: scale(0.6); opacity: 0; }
       to { transform: scale(1); opacity: 1; }
     }
+    .highlight-text {
+        font-weight: 700;              /* Bold */
+        color: #ff2f7a;                /* Pink color */
+    }
+
   </style>
 </head>
 <body>
 
 <script>
-  const hearts = ["❤️","💖","💕","💗"];
-  for (let i = 0; i < 20; i++) {
+  const hearts = [
+  "❤️","💖","💕","💗","💘","💝",
+  "💞","💓","💟","❣️","🩷",
+  "✨","🌸","🌹"
+];
+
+  for (let i = 0; i < 50; i++) {
     const h = document.createElement("div");
     h.className = "heart";
     h.textContent = hearts[Math.floor(Math.random() * hearts.length)];
     h.style.left = Math.random() * 100 + "vw";
     h.style.fontSize = 18 + Math.random() * 24 + "px";
-    h.style.animationDuration = 6 + Math.random() * 6 + "s";
+    h.style.animationDuration = 10 + Math.random() * 8 + "s";
+    // ✅ ADD THIS LINE HERE
+    h.style.color = ["#ff5f8a","#ff87a2","#ffb6c1","#ffd1dc"][Math.floor(Math.random() * 4)];
+    h.style.textShadow = "0 0 10px rgba(255, 120, 150, 0.7)";
+
     document.body.appendChild(h);
   }
 </script>
 
 <div class="card" id="card">
-  <div class="emoji-row">Hiee!!!</div>
+  <div class="emoji-row highlight-text">Hey You 💖</div>
+
+
   <h1>Will you be my Valentine?</h1>
 
   <div class="buttons">
